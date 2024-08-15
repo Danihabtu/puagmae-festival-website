@@ -25,6 +25,8 @@ import testimonial1 from "./assets/testimonials/testimonial1.jpg";
 import testimonial2 from "./assets/testimonials/testimonial2.jpg";
 import testimonial3 from "./assets/testimonials/testimonial3.jpg";
 
+
+
 import { FaHandshake , FaUsers, FaLightbulb, FaBullhorn, FaRocket } from 'react-icons/fa';
 import { MdEqualizer } from 'react-icons/md';
 
@@ -185,6 +187,13 @@ export const testimonials = [
         quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas tincidunt. Nullam nec purus nec purus. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas tincidunt. Nullam nec purus nec purus.',
     } ,
 ]
+export const vendors = [
+    { name: 'Dashen Bank', logo: './assets/dashen.jpg' },
+    { name: 'American Friends Service Commmitte', logo: './assets/afcs.jpg' },
+    { name: 'Partner 1', logo: '/assets/partner1.png' },
+    { name: 'Partner 2', logo: '/assets/partner2.png' },
+  ];
+  
 
 
 export const reasons = [
