@@ -24,7 +24,8 @@ import gallery11 from './assets/Gallery/gallery-image13.jpg';
 import testimonial1 from "./assets/testimonials/testimonial1.jpg";
 import testimonial2 from "./assets/testimonials/testimonial2.jpg";
 import testimonial3 from "./assets/testimonials/testimonial3.jpg";
-
+import dashenLogo from './assets/dashen.jpg';
+import afscLogo from './assets/afsc.jpg';
 
 
 import { FaHandshake , FaUsers, FaLightbulb, FaBullhorn, FaRocket } from 'react-icons/fa';
@@ -188,10 +189,10 @@ export const testimonials = [
     } ,
 ]
 export const vendors = [
-    { name: 'Dashen Bank', logo: './assets/dashen.jpg' },
-    { name: 'American Friends Service Commmitte', logo: './assets/afcs.jpg' },
-    { name: 'Partner 1', logo: '/assets/partner1.png' },
-    { name: 'Partner 2', logo: '/assets/partner2.png' },
+    { name: 'Dashen Bank', logo: dashenLogo },
+  { name: 'American Friends Service Committee', logo: afscLogo },
+    { name: 'Partner 3', logo: '/assets/partner1.png' },
+    { name: 'Partner 4', logo: '/assets/partner2.png' },
   ];
   
 
