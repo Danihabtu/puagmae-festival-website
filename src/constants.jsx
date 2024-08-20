@@ -27,6 +27,9 @@ import testimonial3 from "./assets/testimonials/testimonial3.jpg";
 import dashenLogo from './assets/dashen.jpg';
 import afscLogo from './assets/afsc.jpg';
 
+import carRental from './assets/testimonials/professional-car-rental-logo_23-2149509962.jpg';
+import eventOrganizer from './assets/testimonials/6f9a1bfbba6bf787afca73292569dd0f.jpg';
+
 
 import { FaHandshake , FaUsers, FaLightbulb, FaBullhorn, FaRocket } from 'react-icons/fa';
 import { MdEqualizer } from 'react-icons/md';
@@ -50,6 +53,18 @@ export const socialLinks = [
 ];
 
 export const services = [
+    {
+        title: 'Tour and Car Rental',
+        description: "Drive Your Dreams! Flexible Rentals, Hassle-Free Experience.Explore More with Us",
+        fullDescription: 'We offer unforgettable tours and flexible car rentals tailored to your adventure, allowing you to explore stunning destinations at your pace in our affordable, diverse fleet while enjoying convenience and exceptional service for a memorable journey.',
+        image: carRental,
+    },
+    {
+    title: 'Special Event Organizer',
+    description: "We’re the Event Architects, turning your dreams into unforgettable experiences!",
+    fullDescription: 'We specialize in creating unforgettable experiences for your special events, tailored to your unique vision. Our expert team handles every detail, from concept to execution, ensuring a seamless and stress-free celebration.',
+    image: eventOrganizer,
+},
     {
         title: 'Cultural Knowledge Exchange',
         description: 'Promote cultural knowledge and exchange between different communities.',
@@ -86,6 +101,7 @@ export const services = [
         fullDescription: 'Our panel discussions provide a platform for engaging and insightful conversations on cultural and social issues, featuring experts and community leaders.',
         image: panelDiscussion,
     },
+   
 ];
 
 export const scheduleData = [

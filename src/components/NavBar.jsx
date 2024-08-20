@@ -44,13 +44,16 @@ const NavBar = () => {
   return (
     <div className='sticky top-0 left-0 w-full bg-black text-white z-50'>
       <nav className='flex justify-between items-center max-w-6xl mx-auto py-4'>
-        <div className='flex-none'>
-          <img 
-            src={logo} 
-            alt="puagmae logo" 
-            className='w-20 h-20'
-          />
-        </div>
+      <div className='flex-none'>
+    <img 
+        src={logo} 
+        alt="puagmae logo" 
+        className='w-20 h-20'
+    />
+    <p className='mt-2 md:text-lg text-sm font-bold text-center text-yellow-300 animate-flicker'>
+        Every One Is Beautiful
+    </p>
+</div>
         <div className='hidden lg:flex justify-center'>
           <ul className='flex space-x-6 list-none'>
             {navLinks.map((navLink) => (
@@ -100,6 +103,7 @@ const NavBar = () => {
               alt="puagmae logo" 
               className='w-16 h-16'
             />
+          
             <button onClick={() => setIsOpen(false)} className='text-white'>
               <FaTimes size={24} />
             </button>

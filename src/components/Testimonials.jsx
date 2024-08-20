@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { testimonials } from '../constants';
 import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import TestimonialsVideo from './TestimonialsVideo';
 
 const Testimonials = () => {
     const [current, setCurrent] = useState(0);
@@ -75,6 +76,7 @@ const Testimonials = () => {
                     ))}
                 </div>
             </div>
+            <TestimonialsVideo />
         </div>
     );
 };

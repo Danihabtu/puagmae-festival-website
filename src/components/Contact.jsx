@@ -1,6 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect,useRef} from 'react';
+import emailjs from 'emailjs-com';
 
 const ContactUs = () => {
+    const [formState, setFormState] = useState({
+        user_name: '',
+        email_name: '',
+        message: ''
+      });
+    
+      const handleInputChange = (event) => {
+        setFormState({
+          ...formState,
+          [event.target.name]: event.target.value,
+        });
+      };
+    
+      const [showMessage, setShowMessage] = useState(false);
+      const handleSubmit = (event) => {
+        event.preventDefault();
+    
+        emailjs
+          .sendForm(
+            'service_xqp2oj8',
+            'template_awbu5eh',
+            event.target,
+            'vExBR3tkohSGu0M3P'
+          )
+          .then(
+            (result) => {
+              console.log('Email sent successfully!', result.text);
+              setShowMessage(true);
+              setFormState({
+                user_name: '',
+                email_name: '',
+                message: '',
+            
+              });
+              setTimeout(() => {
+                setShowMessage(false);
+              }, 2000);
+            },
+            (error) => {
+              console.error('Error sending email:', error.text);
+              setFormState({
+                user_name: '',
+                email_name: '',
+                message: '',
+            
+              });
+            }
+          );
+      };
+
     return (
         <div className="bg-gradient-to-r from-gray-800 to-gray-900 py-20 pb-28 px-4 text-white" id="contact">
             <div className="max-w-6xl mx-auto">
@@ -9,14 +60,20 @@ const ContactUs = () => {
                 </h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="bg-black bg-opacity-50 p-8 rounded-lg shadow-lg">
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="name" className="block text-lg font-semibold mb-2">Name</label>
                                 <input
-                                    type="text"
+                                
                                     id="name"
                                     className="w-full p-4 bg-gray-800 text-gray-300 rounded-lg focus:ring-2 focus:ring-goldenrod focus:outline-none"
                                     placeholder="Your Name"
+                                    type="text"
+                                    
+  name="user_name"
+  value={formState.user_name}
+  onChange={handleInputChange}
+  autoComplete='off'
                                 />
                             </div>
                             <div>
@@ -26,6 +83,10 @@ const ContactUs = () => {
                                     id="email"
                                     className="w-full p-4 bg-gray-800 text-gray-300 rounded-lg focus:ring-2 focus:ring-goldenrod focus:outline-none"
                                     placeholder="Your Email"
+                                    name="email_name"
+                                    value={formState.email_name}
+                                    onChange={handleInputChange}
+                                    autoComplete='off'
                                 />
                             </div>
                             <div>
@@ -35,6 +96,9 @@ const ContactUs = () => {
                                     rows="5"
                                     className="w-full p-4 bg-gray-800 text-gray-300 rounded-lg focus:ring-2 focus:ring-goldenrod focus:outline-none"
                                     placeholder="Your Message"
+                                    name="message"
+                                    value={formState.message}
+                                    onChange={handleInputChange}
                                 />
                             </div>
                             <button
@@ -43,7 +107,13 @@ const ContactUs = () => {
                             >
                                 Send Message
                             </button>
+                            {showMessage && (
+  <div className="bg-green-500 text-white px-4 py-2 rounded mb-4 mt-5 font-extrabold">
+    Thanks for your message!
+  </div>
+)}
                         </form>
+    
                     </div>
                     <div className="bg-black bg-opacity-50 p-8 rounded-lg shadow-lg">
                     <iframe 
